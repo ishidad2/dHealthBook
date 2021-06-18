@@ -23,7 +23,7 @@ if( rawAddress == ""){
 	var proaddress = window.prompt('Symbolアドレスを入力してください','');
 	if(proaddress === '' || proaddress === null){
 		alert("サンプルアカウントを表示します");
-		proaddress = "NCESRRSDSXQW7LTYWMHZOCXAESNNBNNVXHPB6WY";
+		proaddress = "NDBSQQFMPJION5C6S5MTZHTXZF7YLX7UZHFLBOA";
 	}
 	rawAddress = proaddress.replace( /-/g , "" ).toUpperCase();
 
@@ -41,6 +41,7 @@ const address = nem.Address.createFromRawAddress(rawAddress);
 function connectNode(nodes,d){
 
 	const node = nodes[Math.floor(Math.random() * nodes.length)] ;
+	console.log('node',node);
 	$.ajax({url:  node + "/node/health" ,type: 'GET',timeout: 1000})
 	.then(res => {
 		if(res.status.apiNode == "up" && res.status.db == "up"){
@@ -150,7 +151,7 @@ const nemScriptionExpiredHeight = localStorage.getItem('NEMscriptionExpiredHeigh
 	networkCurrency = (await repo.getCurrencies().toPromise()).currency;
 	generationHash = await repo.getGenerationHash().toPromise();
 
-	currencyNamespaceId = (new nem.NamespaceId("symbol.xym")).id.toHex();
+	currencyNamespaceId = (new nem.NamespaceId("dhealth.dhp")).id.toHex();
 	latestBlock = (await blockRepo.search({order: nem.Order.Desc}).toPromise()).data[0];
 
 	$("#account_address").text(address.pretty().slice(0,20) + "..." + address.pretty().slice(-3));
@@ -191,7 +192,7 @@ function showPriceInfo(accountInfo){
 	)
 	.subscribe(_=>{
 		$("#account_balance").text(dispAmount(_.amount.toString(),6));
-		showAmountInfo(_.amount);
+		// showAmountInfo(_.amount);
 	});
 }
 

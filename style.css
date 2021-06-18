@@ -1,19 +1,23 @@
-/* #F3B232 */
+/* #6c27ec */
 /* #78B6D7 */
 /* #56B5A4 */
 body {
 	padding-bottom: 3rem;
 }
 h1 {
-	padding: 2rem;
+	padding: 1rem;
+	font-size: 5rem;
 	margin: 0;
-	background-color: #F3B232;
+	background-color: #6c27ec;
 	color: white;
+}
+h1.d-head-title {
+	font-family: 'Parisienne', cursive;
 }
 h2 {
 	position: relative;
 	padding-left: 1.5rem;
-	border-left: 6px solid #F3B232;
+	border-left: 6px solid #6c27ec;
 }
 h2::before {
 	position: absolute;
@@ -47,16 +51,16 @@ td{
 }
 
 hr {
-	background-color: #F3B232;
+	background-color: #6c27ec;
 	margin: 0;
 	border: none;
 	height: 10px;
 }
 .zigzag-orange-white {
   background:
-    linear-gradient(-135deg, #F3B232 5px, transparent 0) 0 5px,
-    linear-gradient(135deg,  #F3B232 5px, #fff 0) 0 5px;
-  background-color: #F3B232;
+    linear-gradient(-135deg, #6c27ec 5px, transparent 0) 0 5px,
+    linear-gradient(135deg,  #6c27ec 5px, #fff 0) 0 5px;
+  background-color: #6c27ec;
   background-position: left bottom;
   background-repeat: repeat-x;
   background-size: 10px 10px;
