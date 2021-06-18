@@ -20,7 +20,7 @@ if (1 < document.location.search.length) {
 
 if( rawAddress == ""){
 
-	var proaddress = window.prompt('Symbolアドレスを入力してください','');
+	var proaddress = window.prompt('dHealthアドレスを入力してください','');
 	if(proaddress === '' || proaddress === null){
 		alert("サンプルアカウントを表示します");
 		proaddress = "NDBSQQFMPJION5C6S5MTZHTXZF7YLX7UZHFLBOA";
