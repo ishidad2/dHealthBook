@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 
-	<meta name="keyword" content="dHealth,dHealthBook,HDP,Symbol,XYM">
+	<meta name="keyword" content="dHealth,dHealthBook,DHP,Symbol,XYM">
 	<meta meta name="description" content="dHealthBookは、ログイン不要で時価総額、ハーベスト状況、入出金履歴、残高確認、重要度等を1ページで確認できる便利なサイトです。">
 	<link rel="canonical" href="https://dhealth.sfn.tools">
 	<meta name="twitter:card" content="summary">
@@ -39,7 +39,7 @@
 		<h2>アカウント</h2>
 		<dl id="account_info">
 			<dt>アドレス</dt><dd><span id="account_address"></span> <a target="_blank" id="account_explorer">explorer</a></dd>
-			<dt>残高</dt><dd><span id="account_balance"></span> HDP</dd>
+			<dt>残高</dt><dd><span id="account_balance"></span> DHP</dd>
 			<!-- <dt>時価総額</dt><dd><span id="market_price"></span></dd> -->
 			<dt>重要度</dt><dd><span id="account_importance"></span></dd>
 		</dl>
@@ -47,7 +47,7 @@
 		<h2>取引所</h2>
 		<small>最終更新　<span id="last_update"></span></small>
 		<dl>
-		<!-- <dt><a href="https://zaif.jp/trade/HDP_jpy" target="_blank">Zaif</a></dt><dd><span id="zaif"></span></dd> -->
+		<!-- <dt><a href="https://zaif.jp/trade/DHPjpy" target="_blank">Zaif</a></dt><dd><span id="zaif"></span></dd> -->
 		<dt>Zaif</dt><dd><span id="zaif">-----</span></dd>
 		<dt>Gate.io</dt><dd><span id="gateio">-----</span></dd>
 		<dt>KuCoin</dt><dd><span id="kucoin">-----</span></dd>
@@ -73,9 +73,9 @@
 					<th>モザイク</th>
 				</tr></thead>
 				<tbody><tr>
-					<td><span id="fee_median"></span>HDP</td>
-					<td><span id="fee_namespace"></span> --- HDP</td>
-					<td><span id="fee_mosaic"></span>HDP</td>
+					<td><span id="fee_median"></span>DHP</td>
+					<td><span id="fee_namespace"></span> --- DHP</td>
+					<td><span id="fee_mosaic"></span>DHP</td>
 				</tr></tbody>
 			</table>
 			</dd>
@@ -209,18 +209,18 @@ function showAmountInfo(amount){
 		const bittrex = Math.round(tickers.USDJPY * tickers.bittrex * 1000) / 1000;
 		const poloniex = Math.round(tickers.USDJPY * tickers.poloniex * 1000) / 1000;
 		const zaif = tickers.zaif;
-		$("#probit").text( probit + "円 / HDP");
-		$("#gateio").text( gateio + "円 / HDP");
-//		$("#hbtc").text( hbtc + "円 / HDP");
-		$("#kucoin").text( kucoin + "円 / HDP");
-		$("#bitrue").text( bitrue + "円 / HDP");
-		$("#bittrex").text( bittrex + "円 / HDP");
-		$("#poloniex").text( poloniex + "円 / HDP");
-		$("#zaif").text( zaif + "円 / HDP");
+		$("#probit").text( probit + "円 / DHP");
+		$("#gateio").text( gateio + "円 / DHP");
+//		$("#hbtc").text( hbtc + "円 / DHP");
+		$("#kucoin").text( kucoin + "円 / DHP");
+		$("#bitrue").text( bitrue + "円 / DHP");
+		$("#bittrex").text( bittrex + "円 / DHP");
+		$("#poloniex").text( poloniex + "円 / DHP");
+		$("#zaif").text( zaif + "円 / DHP");
 
 		var market_price = amount / 1000000 * zaif;
 		market_price = comma3(String(Math.round(market_price)));
-		$("#market_price").text(market_price + "円 [" + zaif + "JPY/HDP換算]");
+		$("#market_price").text(market_price + "円 [" + zaif + "JPY/DHP換算]");
 		$("#last_update").text(tickers.last_update);
 	});
 }
