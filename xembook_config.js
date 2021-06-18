@@ -16,6 +16,7 @@ const NG_NODES = [
 const NODES = [
 "https://dhealth.vistiel-arch.jp:3001",
 "https://dhealth.tokyo:3001",
+"https://dhealth.harvesting-sweet-potatoes.club:3001",
 
 ].filter(word => !NG_NODES.includes(word));
 
