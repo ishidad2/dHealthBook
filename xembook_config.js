@@ -18,12 +18,14 @@ const NODES = [
 "https://dhealth.tokyo:3001",
 "https://dhealth.harvesting-sweet-potatoes.club:3001",
 "https://dhealth-lt.nuaka.net:3001",
+"https:/kawaii-dhp-harvest.tokyo:3001",
 
 ].filter(word => !NG_NODES.includes(word));
 
 const JP_NODES = [
 "https://dhealth.tokyo:3001",
 "https://dhealth.vistiel-arch.jp:3001",
+"https:/kawaii-dhp-harvest.tokyo:3001",
 
 ].filter(word => !NG_NODES.includes(word));
 
