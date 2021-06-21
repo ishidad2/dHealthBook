@@ -15,11 +15,11 @@
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet"> 
-	<link rel="apple-touch-icon" href="icon.png">
-	<title>dHealthMessage</title>
+	<link rel="apple-touch-icon" href="../icon.png">
+	<title>dHealthMessage|en</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="style.css" />
-	<link rel="icon" type="image/png" sizes="16x16" href="icon.png">
+	<link rel="stylesheet" href="../style.css" />
+	<link rel="icon" type="image/png" sizes="16x16" href="../icon.png">
 </head>
 <body>
 	<h1 class="d-head-title">dHealthMessage</h1>
@@ -28,13 +28,13 @@
 	<div class="row">
 
 		<div class="col-sm-12">
-			<h2>抽出条件</h2>
+			<h2>Extraction Condition</h2>
 
 			<form class="form-inline">
 				<div class="form-group">
 					<input id="search_word" type="text" name="name" class="form-control">
 				</div>
-				<button id="search_btn"	class="btn btn-default">再検索</button>
+				<button id="search_btn"	class="btn btn-default">another search</button>
 			</form>
 		</div>
 	
@@ -43,31 +43,31 @@
 		<h2>トランザクション</h2>
 		<table id="table"  class="table">
 			<thead><tr>
-				<th width="120">日時</th>
-				<th width="90">区分</th>
-				<th>数量</th>
-				<th>メッセージ</th>
+				<th width="120">date</th>
+				<th width="90">type</th>
+				<th>amount</th>
+				<th>message</th>
 			</tr></thead>
 			<tbody></tbody>
 		</table>
 		<dl>
-			<dd id="transfers_footer"><a id="transfers_more" href="javascript:void(0)" >さらに読み込む</a></dd>
+			<dd id="transfers_footer"><a id="transfers_more" href="javascript:void(0)" >Next</a></dd>
 		</dl>		
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-sm-4">
-		<h2>アカウント</h2>
+		<h2>Account</h2>
 		<dl id="account_info">
-			<dt>アドレス</dt><dd><span id="account_address"></span></dd>
-			<dt>残高</dt><dd><span id="account_balance"></span> DHP</dd>
+			<dt>address</dt><dd><span id="account_address"></span></dd>
+			<dt>balance</dt><dd><span id="account_balance"></span> DHP</dd>
 		</dl>
 
 		</div>
 
 		<div class="col-sm-4">
 			<div class="links">
-				<h2>リンク</h2>
+				<h2>Links</h2>
 				<dl>
 					<dd><a id="xembook" href="">dHealthBook</a></dd>
 				</dl>
@@ -80,15 +80,16 @@
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<script src="symbol-sdk-1.0.1.min.js"></script>
-<script src="xembook_config.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="../symbol-sdk-1.0.1.min.js"></script>
+<script src="../xembook_config.js"></script>
 <script>
 var nodelist = NODES;
 var explorer = EXPLORER;
 //const nodelist = TEST_NODES;
 //const explorer = TEST_EXPLORER;
 </script>
-<script src="xembook.js"></script>
+<script src="./xembook-en.js"></script>
 <script>
 
 function getListenerInfo(listener){}
