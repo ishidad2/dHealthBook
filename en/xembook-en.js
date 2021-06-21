@@ -20,9 +20,9 @@ if (1 < document.location.search.length) {
 
 if( rawAddress == ""){
 
-	var proaddress = window.prompt('dHealthアドレスを入力してください','');
+	var proaddress = window.prompt('input your dHealth address.','');
 	if(proaddress === '' || proaddress === null){
-		alert("サンプルアカウントを表示します");
+		alert("View a sample account.");
 		proaddress = "NDBSQQFMPJION5C6S5MTZHTXZF7YLX7UZHFLBOA";
 	}
 	rawAddress = proaddress.replace( /-/g , "" ).toUpperCase();
