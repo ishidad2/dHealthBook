@@ -19,7 +19,8 @@ const NODES = [
 "https://dhealth.harvesting-sweet-potatoes.club:3001",
 "https://dhealth-lt.nuaka.net:3001",
 "https://kawaii-dhp-harvest.tokyo:3001",
-"https://dual-01.dhealth.jp:3001"
+"https://dual-01.dhealth.jp:3001",
+"https://0-0-0-akmr-symbol.com:3001",
 
 ].filter(word => !NG_NODES.includes(word));
 
