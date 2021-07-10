@@ -20,6 +20,7 @@ const NODES = [
 "https://dhealth-lt.nuaka.net:3001",
 "https://kawaii-dhp-harvest.tokyo:3001",
 "https://dual-01.dhealth.jp:3001",
+"https://marichi-featuring-essan.ml:3001"
 
 ].filter(word => !NG_NODES.includes(word));
 
