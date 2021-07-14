@@ -591,7 +591,9 @@ $('#receipts_more' ).click(function(){getRecipets(15); return false;});
 $('#set_delegated_node').click(function(){setDelegatedNode();return false;});
 
 $("#xemmessage").attr("href", "xemmessage.html?address=" + rawAddress);
-$("#d-world").attr("href", "https://dworld.sfn.tools?address=" + rawAddress);
+if(rawAddress !== "NDBSQQFMPJION5C6S5MTZHTXZF7YLX7UZHFLBOA"){
+	$("#d-world").attr("href", "https://dworld.sfn.tools?address=" + rawAddress);
+}
 
 // $("#xemtax"    ).attr("href", "xemtax.html?address=" + rawAddress);
 // $("#xemreceiver"    ).attr("href", "xemreceiver.html?address=" + rawAddress);
