@@ -22,7 +22,7 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="icon.png">
 </head>
 <body>
-	<h1 class="d-head-title">dHealthMessage</h1>
+	<a id="title-link"><h1 class="d-head-title">dHealthMessage</h1></a>
 	<hr class="zigzag-orange-white">
 <div class="container">
 	<div class="row">
@@ -285,6 +285,7 @@ function escape_html (string) {
 
 $('#transfers_more').click(function(){getBatchOfTransfers(5);return false;});
 $("#xembook"          ).attr("href", "index.html?address=" + rawAddress);
+$("#title-link"          ).attr("href", "index.html?address=" + rawAddress);
 $("#xemtax"       ).attr("href", "xemtax.html?address=" + rawAddress);
 
 </script>
