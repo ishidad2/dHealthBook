@@ -23,7 +23,7 @@ if( rawAddress == ""){
 	var proaddress = window.prompt('dHealthアドレスを入力してください','');
 	if(proaddress === '' || proaddress === null){
 		alert("サンプルアカウントを表示します");
-		proaddress = "NDBSQQFMPJION5C6S5MTZHTXZF7YLX7UZHFLBOA";
+		proaddress = "NB4RECH2XF2U6ULZ2LQC7SFR3VXVACVFBJP7E3Y";
 	}
 	rawAddress = proaddress.replace( /-/g , "" ).toUpperCase();
 
