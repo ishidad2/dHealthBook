@@ -1,6 +1,6 @@
 .snow {
   color: rgb(184, 179, 179); /*雪の色*/
-  font-size: 18px; /*雪の大きさ*/
+  font-size: 16px; /*雪の大きさ*/
   position: fixed;
   top: -5%; /*初期位置*/
   text-shadow:
