@@ -1,6 +1,6 @@
 .snow {
   color: rgb(184, 179, 179); /*雪の色*/
-  font-size: 16px; /*雪の大きさ*/
+  font-size: 14px; /*雪の大きさ*/
   position: fixed;
   top: -5%; /*初期位置*/
   text-shadow:
@@ -15,7 +15,7 @@
   78vw  -220px 4px,
   86vw  -320px 9px,
   94vw  -170px 7px;
-  animation: anim 7s linear infinite;
+  animation: anim 10s linear infinite;
 }
 
 @keyframes anim {
