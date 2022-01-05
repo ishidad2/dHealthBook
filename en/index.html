@@ -44,6 +44,10 @@
 		<dt>KuCoin</dt><dd><span id="kucoin">-----</span></dd>
 		<dt>Poloniex</dt><dd><span id="poloniex">-----</span></dd>
 		<dt>Bittrex</dt><dd><span id="bittrex">-----</span></dd>
+		<h2>Exchange(ERC20)</h2>
+		<small>last_update　<span id="last_update_erc20"></span></small>
+		<dl>
+		<dt>CoinGecko</dt><dd><span id="coingecko_for_erc20">-----</span></dd>
 <!--
 		<dt>ProBit</dt><dd><span id="probit"></span></dd>
 		<dt>Bitrue</dt><dd><span id="bitrue"></span></dd>
@@ -152,7 +156,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 <script src="../symbol-sdk-1.0.1.min.js"></script>
 <script src="../xembook_config.js"></script>
+<script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+<script src="https://unpkg.com/dayjs@1.8.21/plugin/utc.js"></script>
 
+<script>
+	dayjs.extend(window.dayjs_plugin_utc)
+</script>
 <script>
 var nodelist = NODES;
 var explorer = EXPLORER;
@@ -216,6 +225,19 @@ function showAmountInfo(amount){
 		$("#market_price").text(market_price + "円 [" + zaif + "JPY/DHP換算]");
 		$("#last_update").text(tickers.last_update);
 	});
+}
+
+function showAmountInfoERC20(){
+	$.when(
+		$.ajax({url: "https://api.coingecko.com/api/v3/simple/price?ids=dhealth&vs_currencies=jpy,usd" ,type: 'GET',cache: false}),
+
+	).done(function(tickers){
+
+		$("#coingecko_for_erc20").text( `$${tickers.dhealth.usd} / DHP`);
+		$("#last_update_erc20").text(dayjs().utc().format('YY/MM/DD HH:mm'));
+
+	});
+	
 }
 
 function showAccountInfo(accountInfo){

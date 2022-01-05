@@ -191,6 +191,7 @@ function showPriceInfo(accountInfo){
 	.subscribe(_=>{
 		$("#account_balance").text(dispAmount(_.amount.toString(),6));
 		// showAmountInfo(_.amount);
+		showAmountInfoERC20();
 	});
 }
 

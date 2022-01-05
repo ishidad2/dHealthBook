@@ -55,6 +55,12 @@
 		<dt>KuCoin</dt><dd><span id="kucoin">-----</span></dd>
 		<dt>Poloniex</dt><dd><span id="poloniex">-----</span></dd>
 		<dt>Bittrex</dt><dd><span id="bittrex">-----</span></dd>
+		<dl id="account_append_info"></dl>
+		<h2>取引所(ERC20)</h2>
+		<small>最終更新　<span id="last_update_erc20"></span></small>
+		<dl>
+		<dt>CoinGecko</dt><dd><span id="coingecko_for_erc20">-----</span></dd>
+		<!-- <dt>KuCoin</dt><dd><span id="kucoin">-----</span></dd> -->
 <!--
 		<dt>ProBit</dt><dd><span id="probit"></span></dd>
 		<dt>Bitrue</dt><dd><span id="bitrue"></span></dd>
@@ -162,6 +168,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="symbol-sdk-1.0.1.min.js"></script>
 <script src="xembook_config.js"></script>
+<script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 <script>
 var nodelist = NODES;
 var explorer = EXPLORER;
@@ -225,6 +232,19 @@ function showAmountInfo(amount){
 		$("#market_price").text(market_price + "円 [" + zaif + "JPY/DHP換算]");
 		$("#last_update").text(tickers.last_update);
 	});
+}
+
+function showAmountInfoERC20(){
+	$.when(
+		$.ajax({url: "https://api.coingecko.com/api/v3/simple/price?ids=dhealth&vs_currencies=jpy,usd" ,type: 'GET',cache: false}),
+
+	).done(function(tickers){
+		
+		$("#coingecko_for_erc20").text( `$${tickers.dhealth.usd} (${tickers.dhealth.jpy}円) / DHP`);
+		$("#last_update_erc20").text(dayjs().format('YYYY/MM/DD HH:mm:ss'));
+
+	});
+	
 }
 
 function showAccountInfo(accountInfo){
