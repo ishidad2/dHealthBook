@@ -440,8 +440,9 @@ function showAccountInfo(accountInfo){
 			provabilityHarvest = "[50%: " + pHalf.toFixed(1) + "日, 85%: " + pSig.toFixed(1) + "日]";
 		}
 	}
-	// $("#account_importance").text(accountImportance + " " + provabilityHarvest);
-	$("#account_importance").text(accountImportance);
+
+	$("#account_importance").text(accountImportance + " " + provabilityHarvest);
+	// $("#account_importance").text(accountImportance);
 
 	//アグリゲートトランザクション検知
 	const bondedListener = listener.aggregateBondedAdded(accountInfo.address);

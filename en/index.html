@@ -430,11 +430,11 @@ function showAccountInfo(accountInfo){
 				b += 1;
 			}
 			pSig = b / 2880;
-			provabilityHarvest = "[50%: " + pHalf.toFixed(1) + "日, 85%: " + pSig.toFixed(1) + "日]";
+			provabilityHarvest = "[50%: " + pHalf.toFixed(1) + " days, 85%: " + pSig.toFixed(1) + " days]";
 		}
 	}
-	// $("#account_importance").text(accountImportance + " " + provabilityHarvest);
-	$("#account_importance").text(accountImportance);
+	$("#account_importance").text(accountImportance + " " + provabilityHarvest);
+	// $("#account_importance").text(accountImportance);
 
 	//アグリゲートトランザクション検知
 	const bondedListener = listener.aggregateBondedAdded(accountInfo.address);
