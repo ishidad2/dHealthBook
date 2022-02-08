@@ -1,25 +1,18 @@
 ### Hi there 👋
-this is XEMBook for Symbol from NEM.
+this is dHealthBook for Symbol from NEM.
 
+Project URL:https://dhealth.sfn.tools/
 
-https://xembook.github.io/xembook/
+This project is derived from the following XEMBook project.
+The original project owner is XEMBook.
 
+original:https://xembook.github.io/xembook/
 
 ### ライセンス
+
+dHealthBookはオリジナルライセンスに準じます。
+
+Here is the original copyright notice for XEMBook:
+
 XEMBookという名称と共に秘密鍵やニーモニック入力を求めるフォームを設置しないでください。
 あとは商用問わず、自由にご利用ください。
-
-<!--
-**xembook/xembook** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
