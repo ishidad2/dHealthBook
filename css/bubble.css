@@ -1,0 +1,18 @@
+/* ------ 泡（大きいマル）のスタイル ------ */
+.bubble{ 
+  position:absolute;
+  background:rgba(255,255,255,0.1);/*泡の色・濃さ*/
+  border:thin solid rgba(255,255,225,0.3);/*線の色・濃さ*/
+  border-radius:10px;/*丸み*/
+  box-shadow: 0 0 1px 1px rgba(255,255,225,0.2);/*泡の光彩（外側）*/
+}
+ 
+/* ------ 光（小さいマル）のスタイル ------ */
+.bubble:after{ 
+  content:"";
+  display:block;
+  height:5px;/*光の高さ*/
+  width:5px;/*光の幅*/
+  border-radius:2px;/*丸み*/
+  background:rgba(255,255,255,0.2) /*光の濃さ*/
+}

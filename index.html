@@ -19,7 +19,7 @@
 	<title>dHealthBook</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="css/style.css" />
-	<!-- <link rel="stylesheet" href="css/sakura.css" /> -->
+	<link rel="stylesheet" href="css/bubble.css" />
 	<link rel="icon" type="image/png" sizes="16x16" href="icon.png">
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-M340STZYWH"></script>
@@ -32,153 +32,144 @@
 	</script>
 </head>
 <body>
-	<ul class="sakura">
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-	</ul> 
 	<a id="title-link"><h1 class="d-head-title">dHealthBook</h1></a>
 	<hr class="zigzag-orange-white">
-<div class="container">
-	<div class="row">
-		<div class="account col-sm-4">
-		<h2>アカウント</h2>
-		<dl id="account_info">
-			<dt>アドレス</dt><dd><span id="account_address"></span> <a target="_blank" id="account_explorer">explorer</a></dd>
-			<dt>残高</dt><dd><span id="account_balance"></span> DHP</dd>
-			<dt>時価総額</dt><dd><span id="market_price">0円[0.0JPY/DHP換算]</span></dd>
-			<dt>重要度</dt><dd><span id="account_importance"></span></dd>
-		</dl>
-		<dl id="account_append_info"></dl>
-		<h2>取引所</h2>
-		<small>最終更新　<span id="last_update"></span></small>
-		<dl>
-		<!-- <dt><a href="https://zaif.jp/trade/DHPjpy" target="_blank">Zaif</a></dt><dd><span id="zaif"></span></dd> -->
-		<dt>Zaif</dt><dd><span id="zaif">-----</span></dd>
-		<dt>Gate.io</dt><dd><span id="gateio">-----</span></dd>
-		<dt>KuCoin</dt><dd><span id="kucoin">-----</span></dd>
-		<dt>Poloniex</dt><dd><span id="poloniex">-----</span></dd>
-		<dt>Bittrex</dt><dd><span id="bittrex">-----</span></dd>
-		<dl id="account_append_info"></dl>
-		<h2>取引所(ERC20)</h2>
-		<small>最終更新　<span id="last_update_erc20"></span></small>
-		<dl>
-		<dt>CoinGecko</dt><dd><span id="coingecko_for_erc20">-----</span></dd>
-		<!-- <dt>KuCoin</dt><dd><span id="kucoin">-----</span></dd> -->
-<!--
-		<dt>ProBit</dt><dd><span id="probit"></span></dd>
-		<dt>Bitrue</dt><dd><span id="bitrue"></span></dd>
-		<dt>HBTC</dt><dd><span id="hbtc"></span></dd>-->
-		</dl>
-		<h2>ノード</h2>
-		<dl id="node_info">
-			<dt>接続ノード</dt><dd><span id="node_activity"></span><span id="node_host"></span></dd>
-			<dt>最新ブロック</dt><dd><span id="chain_height"></span></dd>
-			<dt>確定ブロック</dt><dd><span id="finalized_chain_height"></span></dd>
-			<dt><a id="set_delegated_node" href="javascript:void(0)">委任ノード設定</a></dt><dd><span id="delegated_node"></span></dd>
-			<dt>手数料相場</dt>
-			<dd>
-			<table id="fees"  class="table">
-				<thead><tr>
-					<th>送金[中央値]</th>
-					<th>ネームスペース[年]</th>
-					<th>モザイク</th>
-				</tr></thead>
-				<tbody><tr>
-					<td><span id="fee_median"></span>DHP</td>
-					<td><span id="fee_namespace"></span> --- DHP</td>
-					<td><span id="fee_mosaic"></span>DHP</td>
-				</tr></tbody>
-			</table>
-			</dd>
+	<div class="container">
+		<div class="row">
+			<div class="account col-sm-4">
+			<h2>アカウント</h2>
+			<dl id="account_info">
+				<dt>アドレス</dt><dd><span id="account_address"></span> <a target="_blank" id="account_explorer">explorer</a></dd>
+				<dt>残高</dt><dd><span id="account_balance"></span> DHP</dd>
+				<dt>時価総額</dt><dd><span id="market_price">0円[0.0JPY/DHP換算]</span></dd>
+				<dt>重要度</dt><dd><span id="account_importance"></span></dd>
+			</dl>
+			<dl id="account_append_info"></dl>
+			<h2>取引所</h2>
+			<small>最終更新　<span id="last_update"></span></small>
+			<dl>
+			<!-- <dt><a href="https://zaif.jp/trade/DHPjpy" target="_blank">Zaif</a></dt><dd><span id="zaif"></span></dd> -->
+			<dt>Zaif</dt><dd><span id="zaif">-----</span></dd>
+			<dt>Gate.io</dt><dd><span id="gateio">-----</span></dd>
+			<dt>KuCoin</dt><dd><span id="kucoin">-----</span></dd>
+			<dt>Poloniex</dt><dd><span id="poloniex">-----</span></dd>
+			<dt>Bittrex</dt><dd><span id="bittrex">-----</span></dd>
+			<dl id="account_append_info"></dl>
+			<h2>取引所(ERC20)</h2>
+			<small>最終更新　<span id="last_update_erc20"></span></small>
+			<dl>
+			<dt>CoinGecko</dt><dd><span id="coingecko_for_erc20">-----</span></dd>
+			<!-- <dt>KuCoin</dt><dd><span id="kucoin">-----</span></dd> -->
+	<!--
+			<dt>ProBit</dt><dd><span id="probit"></span></dd>
+			<dt>Bitrue</dt><dd><span id="bitrue"></span></dd>
+			<dt>HBTC</dt><dd><span id="hbtc"></span></dd>-->
+			</dl>
+			<h2>ノード</h2>
+			<dl id="node_info">
+				<dt>接続ノード</dt><dd><span id="node_activity"></span><span id="node_host"></span></dd>
+				<dt>最新ブロック</dt><dd><span id="chain_height"></span></dd>
+				<dt>確定ブロック</dt><dd><span id="finalized_chain_height"></span></dd>
+				<dt><a id="set_delegated_node" href="javascript:void(0)">委任ノード設定</a></dt><dd><span id="delegated_node"></span></dd>
+				<dt>手数料相場</dt>
+				<dd>
+				<table id="fees"  class="table">
+					<thead><tr>
+						<th>送金[中央値]</th>
+						<th>ネームスペース[年]</th>
+						<th>モザイク</th>
+					</tr></thead>
+					<tbody><tr>
+						<td><span id="fee_median"></span>DHP</td>
+						<td><span id="fee_namespace"></span> --- DHP</td>
+						<td><span id="fee_mosaic"></span>DHP</td>
+					</tr></tbody>
+				</table>
+				</dd>
 
-		</dl>
+			</dl>
+			</div>
+			<div class="account col-sm-4">
+				<h2>レシート</h2>
+				<h5>対象アカウント</h5>
+				<table id="harvest"  class="table">
+					<thead><tr>
+						<th>日時</th>
+						<th>区分</th>
+						<th>数量</th>
+					</tr></thead>
+				</table>
+				<dl>
+					<dd id="harvests_footer"><a id="harvests_more" href="javascript:void(0)" >さらに読み込む</a></dd>
+				</dl>
+				<h5>送信元アカウント</h5>
+				<table id="receipt"  class="table">
+					<thead><tr>
+						<th>日時</th>
+						<th>区分</th>
+						<th>数量</th>
+					</tr></thead>
+				</table>
+				<dl>
+					<dd id="receipts_footer"><a id="receipts_more" href="javascript:void(0)" >さらに読み込む</a></dd>
+				</dl>
+			</div>
+			<div class="account col-sm-4">
+				<h2>トランザクション</h2>
+				<table id="table"  class="table">
+					<thead><tr>
+						<th>日時</th>
+						<th>区分</th>
+						<th>数量</th>
+					</tr></thead>
+				</table>
+				<dl>
+					<dd id="transfers_footer"><a id="transfers_more" href="javascript:void(0)" >さらに読み込む</a></dd>
+				</dl>
+			</div>
 		</div>
-		<div class="account col-sm-4">
-			<h2>レシート</h2>
-			<h5>対象アカウント</h5>
-			<table id="harvest"  class="table">
-				<thead><tr>
-					<th>日時</th>
-					<th>区分</th>
-					<th>数量</th>
-				</tr></thead>
-			</table>
-			<dl>
-				<dd id="harvests_footer"><a id="harvests_more" href="javascript:void(0)" >さらに読み込む</a></dd>
-			</dl>
-			<h5>送信元アカウント</h5>
-			<table id="receipt"  class="table">
-				<thead><tr>
-					<th>日時</th>
-					<th>区分</th>
-					<th>数量</th>
-				</tr></thead>
-			</table>
-			<dl>
-				<dd id="receipts_footer"><a id="receipts_more" href="javascript:void(0)" >さらに読み込む</a></dd>
-			</dl>
-		</div>
-		<div class="account col-sm-4">
-			<h2>トランザクション</h2>
-			<table id="table"  class="table">
-				<thead><tr>
-					<th>日時</th>
-					<th>区分</th>
-					<th>数量</th>
-				</tr></thead>
-			</table>
-			<dl>
-				<dd id="transfers_footer"><a id="transfers_more" href="javascript:void(0)" >さらに読み込む</a></dd>
-			</dl>
+		<div>
+			<div class="faucet">
+				<h2>リンク</h2>
+				<dl>
+					<dd><a id="xemmessage"  href="">dHealthMessage</a></dd>
+					<!-- <dd><a id="xemtax" href="">XEMTax</a></dd> -->
+					<dd><a href="https://quest.nodes-xym.work" target="_blank" rel="noopener noreferrer">だいノード情報</a></a></dd>
+					<dd><a href="https://quest.nodes-xym.work/shop/map" target="_blank" rel="noopener noreferrer">NEM/Symbol決済マップ</a></a></dd>
+					<dd><a href="https://d-world.fun/node/list" target="_blank" rel="noopener noreferrer">dHealth Node List</a></dd>				
+				</dl>
+			</div>
 		</div>
 	</div>
-	<div>
-		<div class="faucet">
-			<h2>リンク</h2>
-			<dl>
-				<dd><a id="xemmessage"  href="">dHealthMessage</a></dd>
-				<!-- <dd><a id="xemtax" href="">XEMTax</a></dd> -->
-				<dd><a href="https://quest.nodes-xym.work" target="_blank" rel="noopener noreferrer">だいノード情報</a></a></dd>
-				<dd><a href="https://quest.nodes-xym.work/shop/map" target="_blank" rel="noopener noreferrer">NEM/Symbol決済マップ</a></a></dd>
-				<dd><a href="https://d-world.fun/node/list" target="_blank" rel="noopener noreferrer">dHealth Node List</a></dd>				
-			</dl>
-		</div>
-	</div>
-</div>
 
-<!-- 通知モーダル -->
-<div class="modal fade" id="modal-notice" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel2">お知らせ</h5>
-			</div>
-			<div class="modal-body">
-				<label id="modal-label">未承認のトランザクションがあります。<br>ウォレットで詳細を確認してください。</label>
+	<!-- 通知モーダル -->
+	<div class="modal fade" id="modal-notice" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel2">お知らせ</h5>
+				</div>
+				<div class="modal-body">
+					<label id="modal-label">未承認のトランザクションがあります。<br>ウォレットで詳細を確認してください。</label>
 
-				<dl id="tx_info"></dl>
+					<dl id="tx_info"></dl>
 
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-primary" data-dismiss="modal"	id="modal_ok">閉じる</button>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal"	id="modal_ok">閉じる</button>
 
-			</div><!-- /.modal-footer -->
-		</div><!-- /.modal-content -->
-	</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+				</div><!-- /.modal-footer -->
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="symbol-sdk-1.0.1.min.js"></script>
 <script src="xembook_config.js"></script>
 <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+<script src="js/bubbleparticle.2.js"></script>
+
 <script>
 var nodelist = NODES;
 var explorer = EXPLORER;
