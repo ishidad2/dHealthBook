@@ -404,6 +404,7 @@
 		});
 		$("#dhealthbook").attr("href", "index.html?address=" + rawAddress);
 		$("#dhealthmessage").attr("href", "dhealthmessage.html?address=" + rawAddress);
+    $("#title-link").attr("href", "index.html?address=" + rawAddress);
 		
 		$('#transfers_csv').click(function(){onCSVDownload($('#transfers_csv').get(0),$('#table').get(0),'transfer.csv');});
 		$('#harvests_csv').click(function(){onCSVDownload($('#harvests_csv').get(0),$('#harvest').get(0),'target_receipt.csv');});
