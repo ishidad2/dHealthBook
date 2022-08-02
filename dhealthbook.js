@@ -2,6 +2,7 @@ var transferPageNumber = 0;
 var harvestPageNumber = 0;
 var reciptPageNumber = 0;
 var rawAddress = "";
+var dHealthToken = "";
 if (1 < document.location.search.length) {
 
 	const query = document.location.search.substring(1);
@@ -22,7 +23,7 @@ if( rawAddress == ""){
 	var proaddress = window.prompt('dHealthアドレスを入力してください','');
 	if(proaddress === '' || proaddress === null){
 		alert("サンプルアカウントを表示します");
-		proaddress = "NB4RECH2XF2U6ULZ2LQC7SFR3VXVACVFBJP7E3Y";
+		proaddress = "NDAZP2OWJT2VSNM3H5MFAOWZJKZF65QQRE2H64A";
 	}
 	rawAddress = proaddress.replace( /-/g , "" ).toUpperCase();
 	if(history.replaceState) {
@@ -470,3 +471,24 @@ function getDateId(timeStamp,epoch){
 function paddingDate0(num) {
 	return ( num < 10 ) ? '0' + num  : '' + num;
 };
+
+function setToken(){
+	var prop = window.prompt('tokenを入力してください','');
+	if(prop !== "" && prop !== null){
+		saveToken(prop);
+	}
+}
+
+function readToken(){
+	const token = window.localStorage.getItem(address.plain())
+	$("#token").html(token);
+	$(".set_token_btn").prop("disabled", false);
+	return token;
+}
+
+function saveToken(token){
+	window.localStorage.setItem(address.plain(), token);
+	$("#token").html(token);
+	$(".set_token_btn").prop("disabled", true);
+	location.reload();
+}

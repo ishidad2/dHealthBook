@@ -79,3 +79,20 @@ input#xs_amount { width: 60px; }
 .form-group {
 	margin-bottom:5px;
 }
+
+.token_area {
+	display: flex;
+  justify-content: flex-end;
+}
+
+.token_text {
+	margin: 2px 2%;
+}
+
+.set_token_btn {
+	padding: 2px 5px;
+	font-size: 0.85rem;
+	border-radius: 9999px;
+	font-weight: 600;
+}
+

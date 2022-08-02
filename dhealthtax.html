@@ -19,6 +19,10 @@
 		<div class="row">
 			<div class="col-sm-12">
 			<h2>アカウント</h2>
+			<div class="token_area">
+				<div class="token_text" id="token"></div>
+				<button class="set_token_btn" onclick="setToken()" disabled="true">Set Token</button>
+			</div>
 			<dl id="account_info">
 				<dt>アドレス</dt><dd><span id="account_address"></span></dd>
 				<dt>残高</dt><dd><span id="account_balance"></span> DHP</dd>
@@ -116,8 +120,8 @@
 		function showAccountInfo(accountInfo){}
 		
 		function showInfo(accountInfo){
-		
-			$.ajax({url: "https://nem.daisan.dev/api/v1/dhp_jpy" ,type: 'GET'})
+			const token = readToken();
+			$.ajax({url: "https://nem.daisan.dev/api/v1/dhp_jpy" ,type: 'GET', data: {address: address.plain(), token: token}})
 			.done(x=>{
 				dateId2price = x;
 				getBatchOfTransfers(1);
@@ -126,7 +130,7 @@
 		
 			})
 		}
-		
+
 		var gettingInformation = false;
 		
 		$('#spinner_transfers').collapse('hide');
