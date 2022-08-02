@@ -227,8 +227,8 @@
 
       ).done(function(tickers, mexc){
         console.log(tickers,mexc);
-        $("#mexc").text( `$${mexc[0].mexc.usd} (${mexc[0].mexc.jpy}円) / DHP`);
-        $("#coingecko_for_erc20").text( `$${tickers[0].dhealth.usd} (${tickers[0].dhealth.jpy}円) / DHP`);
+        $("#mexc").text( `$${Math.round(mexc[0].mexc.usd * 10000) /10000} (${Math.round(mexc[0].mexc.jpy * 10000) / 10000}円) / DHP`);
+        $("#coingecko_for_erc20").text( `$${Math.round(tickers[0].dhealth.usd * 10000) / 10000} (${Math.round(tickers[0].dhealth.jpy * 10000) /10000}円) / DHP`);
         $("#last_update_erc20").text(dayjs().format('YYYY/MM/DD HH:mm:ss'));
       });
     }
