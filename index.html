@@ -226,7 +226,6 @@
         $.ajax({url: "https://nem.daisan.dev/api/dhp/last_price" ,type: 'GET',cache: false}),
 
       ).done(function(tickers, mexc){
-        console.log(tickers,mexc);
         $("#mexc").text( `$${Math.round(mexc[0].mexc.usd * 10000) /10000} (${Math.round(mexc[0].mexc.jpy * 10000) / 10000}円) / DHP`);
         $("#coingecko_for_erc20").text( `$${Math.round(tickers[0].dhealth.usd * 10000) / 10000} (${Math.round(tickers[0].dhealth.jpy * 10000) /10000}円) / DHP`);
         var market_price = (amount.compact() / 1000000) * (Math.round(mexc[0].mexc.jpy * 10000) / 10000) ;
