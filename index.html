@@ -41,7 +41,7 @@
 			<dl id="account_info">
 				<dt>アドレス</dt><dd><span id="account_address"></span> <a target="_blank" id="account_explorer">explorer</a></dd>
 				<dt>残高</dt><dd><span id="account_balance"></span> DHP</dd>
-				<dt>時価総額</dt><dd><span id="market_price">0円[0.0JPY/DHP換算]</span></dd>
+				<dt>時価総額</dt><dd><span id="market_price">-----</span></dd>
 				<dt>重要度</dt><dd><span id="account_importance"></span></dd>
 			</dl>
 			<dl id="account_append_info"></dl>
@@ -220,7 +220,7 @@
       });
     }
 
-    function showAmountInfoERC20(){
+    function showAmountInfoERC20(amount){
       $.when(
         $.ajax({url: "https://api.coingecko.com/api/v3/simple/price?ids=dhealth&vs_currencies=jpy,usd" ,type: 'GET',cache: false}),
         $.ajax({url: "https://nem.daisan.dev/api/dhp/last_price" ,type: 'GET',cache: false}),
@@ -229,6 +229,12 @@
         console.log(tickers,mexc);
         $("#mexc").text( `$${Math.round(mexc[0].mexc.usd * 10000) /10000} (${Math.round(mexc[0].mexc.jpy * 10000) / 10000}円) / DHP`);
         $("#coingecko_for_erc20").text( `$${Math.round(tickers[0].dhealth.usd * 10000) / 10000} (${Math.round(tickers[0].dhealth.jpy * 10000) /10000}円) / DHP`);
+        
+        var market_price = (amount / 1000000) * (Math.round(mexc[0].mexc.jpy * 10000) / 10000) ;
+        market_price = comma3(String(Math.round(market_price)));
+        $("#market_price").text(market_price + "円 [" + Math.round(mexc[0].mexc.jpy * 10000) / 10000 + "JPY/DHP換算]");
+
+        $("#last_update").text(dayjs().format('YYYY/MM/DD HH:mm:ss'));
         $("#last_update_erc20").text(dayjs().format('YYYY/MM/DD HH:mm:ss'));
       });
     }
