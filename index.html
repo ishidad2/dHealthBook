@@ -48,6 +48,7 @@
 			<h2>取引所</h2>
 			<small>最終更新　<span id="last_update"></span></small>
 			<dl>
+			<dt>MEXC</dt><dd><span id="mexc">-----</span></dd>
 			<dt>Zaif</dt><dd><span id="zaif">-----</span></dd>
 			<dt>Gate.io</dt><dd><span id="gateio">-----</span></dd>
 			<dt>KuCoin</dt><dd><span id="kucoin">-----</span></dd>
@@ -222,12 +223,13 @@
     function showAmountInfoERC20(){
       $.when(
         $.ajax({url: "https://api.coingecko.com/api/v3/simple/price?ids=dhealth&vs_currencies=jpy,usd" ,type: 'GET',cache: false}),
+        $.ajax({url: "https://nem.daisan.dev/api/dhp/last_price" ,type: 'GET',cache: false}),
 
-      ).done(function(tickers){
-        
-        $("#coingecko_for_erc20").text( `$${tickers.dhealth.usd} (${tickers.dhealth.jpy}円) / DHP`);
+      ).done(function(tickers, mexc){
+        console.log(tickers,mexc);
+        $("#mexc").text( `$${mexc[0].mexc.usd} (${mexc[0].mexc.jpy}円) / DHP`);
+        $("#coingecko_for_erc20").text( `$${tickers[0].dhealth.usd} (${tickers[0].dhealth.jpy}円) / DHP`);
         $("#last_update_erc20").text(dayjs().format('YYYY/MM/DD HH:mm:ss'));
-
       });
     }
 
