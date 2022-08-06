@@ -305,7 +305,7 @@
 				dateId = getDateId(Number(b.timestamp.toString()),epochAdjustment)
 				if(dateId in dateId2price){
 		
-					avgJPY   = Number(dateId2price[dateId].native ? dateId2price[dateId].erc20 : dateId2price[dateId].erc20).toFixed(4);
+					avgJPY   = Number(dateId2price[dateId].native ? dateId2price[dateId].native : dateId2price[dateId].erc20).toFixed(4);
 					totalJPY = Number(avgJPY * receipt.amount/1000000);
 		
 					$("#" + tag + "_amount_jpy"     + height + receipt.type + cnt).text(dispJpyAmount(totalJPY));
