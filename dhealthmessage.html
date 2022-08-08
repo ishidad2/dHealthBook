@@ -1,300 +1,302 @@
 <!doctype html>
 <html lang="ja">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 
-	<meta name="keyword" content="dHealth,dHealthMessage,DHP,Symbol,XYM">
-	<meta meta name="description" content="dHealthMessageは、ログイン不要でトランザクションに紐づくメッセージを1ページで確認できる便利なサイトです。">
-	<link rel="canonical" href="https://dhealth.sfn.tools">
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:site" content="@ishidad2">
-	<meta name="twitter:title" content="dHealthMessage">
-	<meta name="twitter:description" content="dHealthMessageは、ログイン不要でトランザクションに紐づくメッセージを1ページで確認できる便利なサイトです。">
-	<meta name="twitter:image" content="https://dhealth.sfn.tools/images/dhealthmessage.png">
+		<meta name="keyword" content="dHealth,dHealthMessage,DHP,Symbol,XYM">
+		<meta meta name="description" content="dHealthMessageは、ログイン不要でトランザクションに紐づくメッセージを1ページで確認できる便利なサイトです。">
+		<link rel="canonical" href="https://dhealth.sfn.tools">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:site" content="@ishidad2">
+		<meta name="twitter:title" content="dHealthMessage">
+		<meta name="twitter:description" content="dHealthMessageは、ログイン不要でトランザクションに紐づくメッセージを1ページで確認できる便利なサイトです。">
+		<meta name="twitter:image" content="https://dhealth.sfn.tools/images/dhealthmessage.png">
 
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet"> 
-	<link rel="apple-touch-icon" href="icon.png">
-	<title>dHealthMessage</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="css/bubble.css" />
-	<link rel="icon" type="image/png" sizes="16x16" href="icon.png">
-</head>
-<body>
-	<a id="title-link"><h1 class="d-head-title">dHealthMessage</h1></a>
-	<hr class="zigzag-orange-white">
-<div class="container">
-	<div class="row">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet"> 
+		<link rel="apple-touch-icon" href="icon.png">
+		<title>dHealthMessage</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/leaves.css" />
+		<link rel="icon" type="image/png" sizes="16x16" href="icon.png">
+	</head>
+	<body>
+		<div class="leaves-container">
+			<a id="title-link"><h1 class="d-head-title">dHealthMessage</h1></a>
+		</div>
+		<hr class="zigzag-orange-white">
+		<div class="container">
+			<div class="row">
 
-		<div class="col-sm-12">
-			<h2>抽出条件</h2>
+				<div class="col-sm-12">
+					<h2>抽出条件</h2>
 
-			<form class="form-inline">
-				<div class="form-group">
-					<input id="search_word" type="text" name="name" class="form-control">
+					<form class="form-inline">
+						<div class="form-group">
+							<input id="search_word" type="text" name="name" class="form-control">
+						</div>
+						<button id="search_btn"	class="btn btn-default">再検索</button>
+					</form>
 				</div>
-				<button id="search_btn"	class="btn btn-default">再検索</button>
-			</form>
-		</div>
-	
-		<div class="col-sm-12">
+			
+				<div class="col-sm-12">
 
-		<h2>トランザクション</h2>
-		<table id="table"  class="table">
-			<thead><tr>
-				<th width="120">日時</th>
-				<th width="90">区分</th>
-				<th>数量</th>
-				<th>メッセージ</th>
-			</tr></thead>
-			<tbody></tbody>
-		</table>
-		<dl>
-			<dd id="transfers_footer"><a id="transfers_more" href="javascript:void(0)" >さらに読み込む</a></dd>
-		</dl>		
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-4">
-		<h2>アカウント</h2>
-		<dl id="account_info">
-			<dt>アドレス</dt><dd><span id="account_address"></span></dd>
-			<dt>残高</dt><dd><span id="account_balance"></span> DHP</dd>
-		</dl>
-
-		</div>
-
-		<div class="col-sm-4">
-			<div class="links">
-				<h2>リンク</h2>
+				<h2>トランザクション</h2>
+				<table id="table"  class="table">
+					<thead><tr>
+						<th width="120">日時</th>
+						<th width="90">区分</th>
+						<th>数量</th>
+						<th>メッセージ</th>
+					</tr></thead>
+					<tbody></tbody>
+				</table>
 				<dl>
-					<dd><a id="dhealthbook" href="">dHealthBook</a></dd>
-					<dd><a id="dhealthtax" href="">dHealthTax</a></dd>
+					<dd id="transfers_footer"><a id="transfers_more" href="javascript:void(0)" >さらに読み込む</a></dd>
+				</dl>		
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4">
+				<h2>アカウント</h2>
+				<dl id="account_info">
+					<dt>アドレス</dt><dd><span id="account_address"></span></dd>
+					<dt>残高</dt><dd><span id="account_balance"></span> DHP</dd>
 				</dl>
+
+				</div>
+
+				<div class="col-sm-4">
+					<div class="links">
+						<h2>リンク</h2>
+						<dl>
+							<dd><a id="dhealthbook" href="">dHealthBook</a></dd>
+							<dd><a id="dhealthtax" href="">dHealthTax</a></dd>
+						</dl>
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
-</div>
 
 
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<script src="https://xembook.github.io/nem2-browserify/symbol-sdk-2.0.0.js"></script>
-<script src="dhealthbook-config.js"></script>
-<script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
-<script src="js/bubbleparticle.2.js"></script>
-<script>
-	var nodelist = NODES;
-	var explorer = EXPLORER;
-	const SENDING = "送信";
-	const RECEIVING = "受信";
-	const AGGREGATE = "集約";
-</script>
-<script src="dhealthbook.js"></script>
-<script>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+		<script src="https://xembook.github.io/nem2-browserify/symbol-sdk-2.0.0.js"></script>
+		<script src="dhealthbook-config.js"></script>
+		<script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+		<script src="js/leaves.js"></script>
+		<script>
+			var nodelist = NODES;
+			var explorer = EXPLORER;
+			const SENDING = "送信";
+			const RECEIVING = "受信";
+			const AGGREGATE = "集約";
+		</script>
+		<script src="dhealthbook.js"></script>
+		<script>
 
-function getListenerInfo(listener){}
-function getNewInfo(block){}
-function showAmountInfo(amount){}
-function showInfo(accountInfo){
-	getBatchOfTransfers(1);
-}
-
-function replacer( str, word , size ) {
-
-	var SearchString = '(' + word.replace( ',', '|' ) + ')';
-	var RegularExp = new RegExp( SearchString, "g" );
-	var ReplaceString = "<span class='right' style='color:red; font-size:" + size + "px; background-color: yellow;'>$1</span>";
-	var ResString = str.replace( RegularExp , ReplaceString );
-	return ResString;
-}
-
-$('#search_btn').click(function(){
-
-	$('#table tbody *').remove();
-	transferPageNumber = 1;
-	harvestPageNumber = 1;
-	reciptPageNumber = 1;
-
-	getBatchOfTransfers(1);
-
-	return false;
-})
-
-
-function getBatchOfTransfers(maxCount){
-
-	var count = 0;
-	var timer;
-	timer = setInterval( async function(){
-		console.log(count)
-		count++;
-		isLastPage = await getTransfers(25);
-		if (isLastPage || count >= maxCount){
-			clearInterval(timer);
+		function getListenerInfo(listener){}
+		function getNewInfo(block){}
+		function showAmountInfo(amount){}
+		function showInfo(accountInfo){
+			getBatchOfTransfers(1);
 		}
-	},2500)
-}
 
-function appendAggTx(tx){
+		function replacer( str, word , size ) {
 
-	var searchWord = $("#search_word").val();
-
-	var isHit = true;
-	if(searchWord != ""){
-		isHit = false;
-	}
-
-	const message =  getMessage(tx) ;
-	if(message.match(searchWord)  ){
-
-		if(searchWord != ""){
-
-			plain_text = replacer( message, searchWord,15);
-			isHit = true;
+			var SearchString = '(' + word.replace( ',', '|' ) + ')';
+			var RegularExp = new RegExp( SearchString, "g" );
+			var ReplaceString = "<span class='right' style='color:red; font-size:" + size + "px; background-color: yellow;'>$1</span>";
+			var ResString = str.replace( RegularExp , ReplaceString );
+			return ResString;
 		}
-	}
 
+		$('#search_btn').click(function(){
 
-	if(isHit){
-		const id = tx.transactionInfo.id;
-		$("#table").append("<tr id='agg" + id + "'>"
-		+ "<td><a target='_blank' href='http://explorer.dhealth.cloud/transactions/"
-		+ tx.transactionInfo.hash + "'><span id='date" + id + "'>"
-		+ "</span></a></td>"
-		+ "<td id='type" + id + "'></td>" //mosaicLabel
-		+ "<td id='amount" + id + "' class='text-right'></td>"
-		+ "<td class='text-left'>" + message + "</td>"
+			$('#table tbody *').remove();
+			transferPageNumber = 1;
+			harvestPageNumber = 1;
+			reciptPageNumber = 1;
 
-		+ "</tr>"
-		);
+			getBatchOfTransfers(1);
 
-		blockRepo.getBlockByHeight(tx.transactionInfo.height)
-		.subscribe(b => {
-
-			$("#date"+ id).text(
-				dispTimeStamp(Number(b.timestamp.toString()),epochAdjustment)
-			);
+			return false;
 		})
-	}
-}
 
-function appendTx(insTag,id,tx){
 
-	var searchWord = $("#search_word").val();
+		function getBatchOfTransfers(maxCount){
 
-	var isHit = true;
-	if(searchWord != ""){
-		isHit = false;
-	}
-
-	const message =  getMessage(tx) ;
-	if(message.match(searchWord)  ){
-
-		if(searchWord != ""){
-
-			plain_text = replacer( message, searchWord,15);
-			isHit = true;
+			var count = 0;
+			var timer;
+			timer = setInterval( async function(){
+				console.log(count)
+				count++;
+				isLastPage = await getTransfers(25);
+				if (isLastPage || count >= maxCount){
+					clearInterval(timer);
+				}
+			},2500)
 		}
-	}
+
+		function appendAggTx(tx){
+
+			var searchWord = $("#search_word").val();
+
+			var isHit = true;
+			if(searchWord != ""){
+				isHit = false;
+			}
+
+			const message =  getMessage(tx) ;
+			if(message.match(searchWord)  ){
+
+				if(searchWord != ""){
+
+					plain_text = replacer( message, searchWord,15);
+					isHit = true;
+				}
+			}
 
 
-	if(isHit){
+			if(isHit){
+				const id = tx.transactionInfo.id;
+				$("#table").append("<tr id='agg" + id + "'>"
+				+ "<td><a target='_blank' href='http://explorer.dhealth.cloud/transactions/"
+				+ tx.transactionInfo.hash + "'><span id='date" + id + "'>"
+				+ "</span></a></td>"
+				+ "<td id='type" + id + "'></td>" //mosaicLabel
+				+ "<td id='amount" + id + "' class='text-right'></td>"
+				+ "<td class='text-left'>" + message + "</td>"
 
-		$(insTag).append(
-			"<tr>"
-			+ "<td><a target='_blank' href='http://explorer.dhealth.cloud/transactions/"
-			   + tx.transactionInfo.hash + "'><span id='date" + id + "'>"
-			+ "</span></a></td>"
-			+ "<td id='type" + id + "'></td>" //mosaicLabel
-			+ "<td id='amount" + id + "' class='text-right'></td>"
-			+ "<td class='text-left'>" + getMessage(tx) + "</td>"
-			+ "</tr>"
-		);
+				+ "</tr>"
+				);
 
-		blockRepo.getBlockByHeight(tx.transactionInfo.height)
-		.subscribe(b => {
+				blockRepo.getBlockByHeight(tx.transactionInfo.height)
+				.subscribe(b => {
 
-			$("#date"+ id).text(
-				dispTimeStamp(Number(b.timestamp.toString()),epochAdjustment)
+					$("#date"+ id).text(
+						dispTimeStamp(Number(b.timestamp.toString()),epochAdjustment)
+					);
+				})
+			}
+		}
+
+		function appendTx(insTag,id,tx){
+
+			var searchWord = $("#search_word").val();
+
+			var isHit = true;
+			if(searchWord != ""){
+				isHit = false;
+			}
+
+			const message =  getMessage(tx) ;
+			if(message.match(searchWord)  ){
+
+				if(searchWord != ""){
+
+					plain_text = replacer( message, searchWord,15);
+					isHit = true;
+				}
+			}
+
+
+			if(isHit){
+
+				$(insTag).append(
+					"<tr>"
+					+ "<td><a target='_blank' href='http://explorer.dhealth.cloud/transactions/"
+						+ tx.transactionInfo.hash + "'><span id='date" + id + "'>"
+					+ "</span></a></td>"
+					+ "<td id='type" + id + "'></td>" //mosaicLabel
+					+ "<td id='amount" + id + "' class='text-right'></td>"
+					+ "<td class='text-left'>" + getMessage(tx) + "</td>"
+					+ "</tr>"
+				);
+
+				blockRepo.getBlockByHeight(tx.transactionInfo.height)
+				.subscribe(b => {
+
+					$("#date"+ id).text(
+						dispTimeStamp(Number(b.timestamp.toString()),epochAdjustment)
+					);
+				})
+			}
+		}
+
+		function insertTxAfter(insTag,id,tx){
+
+			$(insTag).after(
+				"<tr>"
+				+ "<td></td>"
+				+ "<td id='type" + id + "'></td>" //mosaicLabel
+				+ "<td id='amount" + id + "'  class='text-right'></td>"
+				+ "<td class='text-left'>" + getMessage(tx) + "</td>"
+				+ "</tr>"
 			);
-		})
-	}
-}
-
-function insertTxAfter(insTag,id,tx){
-
-	$(insTag).after(
-		"<tr>"
-		+ "<td></td>"
-		+ "<td id='type" + id + "'></td>" //mosaicLabel
-		+ "<td id='amount" + id + "'  class='text-right'></td>"
-		+ "<td class='text-left'>" + getMessage(tx) + "</td>"
-		+ "</tr>"
-	);
-}
-function showAmountInfoERC20(){
-     
-    }
-function showTxAmountInfo(id,amount,fee){
-
-	$("#amount" + id).text(
-		dispAmount(
-			amount.add(nem.UInt64.fromNumericString(fee.toString()))
-			,6
-		)
-	);
-}
-
-
-function getMessage(tx){
-
-	message = "";
-	if(tx.message){
-		if(tx.message.type === nem.MessageType.EncryptedMessage){
-
-			message = "[EncryptedMessage]";
-		
-		}else if(tx.message.type === nem.MessageType.PersistentHarvestingDelegationMessage){
-
-			message = "[PersistentHarvestingDelegationMessage]";
-
-		}else if(tx.message.type === nem.MessageType.PlainMessage){
-
-			message = tx.message.payload;
-
-		}else if(tx.message.type === nem.MessageType.RawMessage){
-		
-			message = tx.message.payload;
 		}
-	}
-	return escape_html(message);
-}
+		function showAmountInfoERC20(){
+				
+				}
+		function showTxAmountInfo(id,amount,fee){
 
-function escape_html (string) {
-	if(typeof string !== 'string') {
-		return string;
-	}
-	return string.replace(/[&'`"<>]/g, function(match) { //'
-		return {
-			'&': '&amp;',
-			"'": '&#x27;',
-			'`': '&#x60;',
-			'"': '&quot;',
-			'<': '&lt;',
-			'>': '&gt;',
-		}[match]
-	});
-}
+			$("#amount" + id).text(
+				dispAmount(
+					amount.add(nem.UInt64.fromNumericString(fee.toString()))
+					,6
+				)
+			);
+		}
 
-$('#transfers_more').click(function(){getBatchOfTransfers(5);return false;});
-$("#dhealthbook").attr("href", "index.html?address=" + rawAddress);
-$("#title-link").attr("href", "index.html?address=" + rawAddress);
-$("#dhealthtax").attr("href", "dhealthtax.html?address=" + rawAddress);
 
-</script>
-</body>
+		function getMessage(tx){
+
+			message = "";
+			if(tx.message){
+				if(tx.message.type === nem.MessageType.EncryptedMessage){
+
+					message = "[EncryptedMessage]";
+				
+				}else if(tx.message.type === nem.MessageType.PersistentHarvestingDelegationMessage){
+
+					message = "[PersistentHarvestingDelegationMessage]";
+
+				}else if(tx.message.type === nem.MessageType.PlainMessage){
+
+					message = tx.message.payload;
+
+				}else if(tx.message.type === nem.MessageType.RawMessage){
+				
+					message = tx.message.payload;
+				}
+			}
+			return escape_html(message);
+		}
+
+		function escape_html (string) {
+			if(typeof string !== 'string') {
+				return string;
+			}
+			return string.replace(/[&'`"<>]/g, function(match) { //'
+				return {
+					'&': '&amp;',
+					"'": '&#x27;',
+					'`': '&#x60;',
+					'"': '&quot;',
+					'<': '&lt;',
+					'>': '&gt;',
+				}[match]
+			});
+		}
+
+		$('#transfers_more').click(function(){getBatchOfTransfers(5);return false;});
+		$("#dhealthbook").attr("href", "index.html?address=" + rawAddress);
+		$("#title-link").attr("href", "index.html?address=" + rawAddress);
+		$("#dhealthtax").attr("href", "dhealthtax.html?address=" + rawAddress);
+
+		</script>
+	</body>
 </html>

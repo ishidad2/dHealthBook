@@ -96,3 +96,7 @@ input#xs_amount { width: 60px; }
 	font-weight: 600;
 }
 
+.table-responsive {
+	border: none;
+}
+

@@ -11,7 +11,7 @@ const TEST_NODES = [];
 
 const NG_NODES = [
 "https://dhealth.tokyo:3001",
-
+"https://dai-dhealth.sfn.tools:3001"
 ];
 const NODES = [
 "https://dai-dhealth.sfn.tools:3001",

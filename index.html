@@ -19,7 +19,7 @@
 	<title>dHealthBook</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="css/bubble.css" />
+	<link rel="stylesheet" href="css/leaves.css" />
 	<link rel="icon" type="image/png" sizes="16x16" href="icon.png">
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-M340STZYWH"></script>
@@ -32,7 +32,9 @@
 	</script>
 </head>
 <body>
-  <a id="title-link"><h1 class="d-head-title">dHealthBook</h1></a>
+  <div class="leaves-container">
+    <a id="title-link"><h1 class="d-head-title">dHealthBook</h1></a>
+  </div>
 	<hr class="zigzag-orange-white">
   <div class="container">
 		<div class="row">
@@ -67,7 +69,7 @@
 				<dt><a id="set_delegated_node" href="javascript:void(0)">委任ノード設定</a></dt><dd><span id="delegated_node"></span></dd>
 				<dt>手数料相場</dt>
 				<dd>
-				<table id="fees"  class="table">
+				<table id="fees" class="table">
 					<thead><tr>
 						<th>送金[中央値]</th>
 						<th>ネームスペース[年]</th>
@@ -85,7 +87,7 @@
 			<div class="account col-sm-4">
 				<h2>レシート</h2>
 				<h5>対象アカウント</h5>
-				<table id="harvest"  class="table">
+				<table id="harvest" class="table">
 					<thead><tr>
 						<th>日時</th>
 						<th>区分</th>
@@ -96,7 +98,7 @@
 					<dd id="harvests_footer"><a id="harvests_more" href="javascript:void(0)" >さらに読み込む</a></dd>
 				</dl>
 				<h5>送信元アカウント</h5>
-				<table id="receipt"  class="table">
+				<table id="receipt" class="table">
 					<thead><tr>
 						<th>日時</th>
 						<th>区分</th>
@@ -109,7 +111,7 @@
 			</div>
 			<div class="account col-sm-4">
 				<h2>トランザクション</h2>
-				<table id="table"  class="table">
+				<table id="table" class="table">
 					<thead><tr>
 						<th>日時</th>
 						<th>区分</th>
@@ -160,7 +162,7 @@
   <script src="https://xembook.github.io/nem2-browserify/symbol-sdk-2.0.0.js"></script>
   <script src="dhealthbook-config.js"></script>
   <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
-  <script src="js/bubbleparticle.2.js"></script>
+  <script src="js/leaves.js"></script>
   <script>
     var nodelist = NODES;
     var explorer = EXPLORER;

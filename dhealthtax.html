@@ -7,83 +7,91 @@
 	<title>dHealthTax(β)</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="css/bubble.css" />
 	<link rel="icon" type="image/png" sizes="16x16" href="icon.png">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="css/leaves.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
 </head>
 <body>
-	<a id="title-link"><h1 class="d-head-title">dHealthTax(β)</h1></a>
+  <div class="leaves-container">
+		<a id="title-link"><h1 class="d-head-title">dHealthTax(β)</h1></a>
+	</div>
 	<hr class="zigzag-orange-white">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-			<h2>アカウント</h2>
-			<div class="token_area">
-				<div class="token_text" id="token"></div>
-				<button class="set_token_btn" onclick="setToken()" disabled="true">Set Token</button>
-			</div>
-			<div class="token_area">
-				<div class="token_text">Tokenについては<a href="https://nemlog.nem.social/blog/77361" target="_blank" rel="noopener noreferrer">こちら</a></div>
-			</div>
-			<dl id="account_info">
-				<dt>アドレス</dt><dd><span id="account_address"></span></dd>
-				<dt>残高</dt><dd><span id="account_balance"></span> DHP</dd>
-				<!-- <dt>時価総額</dt><dd><span id="market_price"></span></dd> -->
-			</dl>
+				<small>dHealthTaxはβ版です。円平均の価格はMEXC APIを用いてUSDJPYを取得し、1時間毎に為替レートを取得し計算しています。あくまで参考程度にご利用下さい。</small>
+				<h2>アカウント</h2>
+				<div class="token_area">
+					<div class="token_text" id="token"></div>
+					<button class="set_token_btn" onclick="setToken()" disabled="true">Set Token</button>
+				</div>
+				<div class="token_area">
+					<div class="token_text">Tokenについては<a href="https://nemlog.nem.social/blog/77361" target="_blank" rel="noopener noreferrer">こちら</a></div>
+				</div>
+				<dl id="account_info">
+					<dt>アドレス</dt><dd><span id="account_address"></span></dd>
+					<dt>残高</dt><dd><span id="account_balance"></span> DHP</dd>
+					<!-- <dt>時価総額</dt><dd><span id="market_price"></span></dd> -->
+				</dl>
 
-			<h2>レシート</h2>
-			<dl>
-				<dt>対象アカウント</dt>
-				<table id="harvest"  class="table">
-					<thead><tr>
-						<th>日時</th>
-						<th class='text-left'>区分</th>
-						<th class='text-right'>DHP数量</th>
-						<th class='text-right'>円換算値</th>
-						<th class='text-right'>円平均</th>
-					</tr></thead>
-				</table>
-				<dd id="harvests_footer">
-					<div id="spinner_harvests" class="collapse"><img src="images/loading-s-17.gif" /></div>
-					<a id="harvests_more" href="javascript:void(0)" >さらに読み込む</a></dd>
-				<a id="harvests_csv" href="javascript:void(0)" >CSVダウンロード</a>
-			</dl>
-			<dl>
-				<dt>送信元アカウント</dt>
-				<table id="receipt"  class="table">
-					<thead><tr>
-						<th>日時</th>
-						<th class='text-left'>区分</th>
-						<th class='text-right'>DHP数量</th>
-						<th class='text-right'>円換算値</th>
-						<th class='text-right'>円平均</th>
-					</tr></thead>
-				</table>
-				<dd id="receipts_footer">
-					<div id="spinner_receipts" class="collapse"><img src="images/loading-s-17.gif" /></div>
-					<a id="receipts_more" href="javascript:void(0)" >さらに読み込む</a><br>
+				<h2>レシート</h2>
+				<dl>
+					<dt>対象アカウント</dt>
+					<div class="table-responsive">
+						<table id="harvest" class="table">
+							<thead><tr>
+								<th>日時</th>
+								<th class='text-left'>区分</th>
+								<th class='text-right'>DHP数量</th>
+								<th class='text-right'>円換算値</th>
+								<th class='text-right'>円平均</th>
+							</tr></thead>
+						</table>
+					</div>
+					<dd id="harvests_footer">
+						<div id="spinner_harvests" class="collapse"><img src="images/loading-s-17.gif" /></div>
+						<a id="harvests_more" href="javascript:void(0)" >さらに読み込む</a></dd>
+					<a id="harvests_csv" href="javascript:void(0)" >CSVダウンロード</a>
+				</dl>
+				<dl>
+					<dt>送信元アカウント</dt>
+					<div class="table-responsive">
+						<table id="receipt" class="table">
+							<thead><tr>
+								<th>日時</th>
+								<th class='text-left'>区分</th>
+								<th class='text-right'>DHP数量</th>
+								<th class='text-right'>円換算値</th>
+								<th class='text-right'>円平均</th>
+							</tr></thead>
+						</table>
+					</div>
+					<dd id="receipts_footer">
+						<div id="spinner_receipts" class="collapse"><img src="images/loading-s-17.gif" /></div>
+						<a id="receipts_more" href="javascript:void(0)" >さらに読み込む</a><br>
+					</dd>
+					<a id="receipts_csv" href="javascript:void(0)" >CSVダウンロード</a>
+				</dl>
+
+				<h2>トランザクション</h2>
+				<div class="table-responsive">
+					<table id="table" class="table">
+						<thead><tr>
+							<th>日時</th>
+							<th>区分</th>
+							<th>DHP数量</th>
+							<th>円換算値</th>
+							<th>円平均</th>
+							<th>負担手数料</th>
+						</tr></thead>
+					</table>
+				</div>
+				<dd id="transfers_footer">
+					<div id="spinner_transfers" class="collapse"><img src="images/loading-s-17.gif" /></div>
+					<a id="transfers_more" href="javascript:void(0)" >さらに読み込む</a><br>
 				</dd>
-				<a id="receipts_csv" href="javascript:void(0)" >CSVダウンロード</a>
-			</dl>
-
-			<h2>トランザクション</h2>
-			<table id="table"  class="table">
-				<thead><tr>
-					<th>日時</th>
-					<th>区分</th>
-					<th class='text-right'>DHP数量</th>
-					<th class='text-right'>円換算値</th>
-					<th class='text-right'>円平均</th>
-					<th class='text-right'>負担手数料</th>
-				</tr></thead>
-			</table>
-			<dd id="transfers_footer">
-				<div id="spinner_transfers" class="collapse"><img src="images/loading-s-17.gif" /></div>
-				<a id="transfers_more" href="javascript:void(0)" >さらに読み込む</a><br>
-			</dd>
-			<a id="transfers_csv" href="javascript:void(0)" >CSVダウンロード</a>
-
+				<a id="transfers_csv" href="javascript:void(0)" >CSVダウンロード</a>
 			</div>
 		</div>
 
@@ -102,7 +110,7 @@
   <script src="https://xembook.github.io/nem2-browserify/symbol-sdk-2.0.0.js"></script>
   <script src="dhealthbook-config.js"></script>
   <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
-  <script src="js/bubbleparticle.2.js"></script>
+  <script src="js/leaves.js"></script>
 	<script>
     var nodelist = NODES;
     var explorer = EXPLORER;
@@ -114,7 +122,7 @@
 	<script>
 
 		// alert("dHealthTaxは現在試作版です。円平均の価格はMEXC APIを用いてUSDJPY(現在はERC20のみ)を取得し、1時間毎に為替レートを取得し計算しています。あくまで参考程度にご利用下さい。また、dHealthTaxはXEMTaxを参考に作れらています。この場を借りてお礼を申し上げます。");
-		alert("dHealthTaxはβ版です。円平均の価格はMEXC APIを用いてUSDJPYを取得し、1時間毎に為替レートを取得し計算しています。あくまで参考程度にご利用下さい。");
+		// alert("dHealthTaxはβ版です。円平均の価格はMEXC APIを用いてUSDJPYを取得し、1時間毎に為替レートを取得し計算しています。あくまで参考程度にご利用下さい。");
 
 		var dateId2price;
 		var dateIds = Array();
