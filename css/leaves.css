@@ -2,12 +2,10 @@
 /* ===== 落ち葉を表示するコンテナのスタイル ===== */
 .leaves-container {
   position: relative;
-  overflow: hidden; /* コンテナからはみ出した要素を隠す */
+  overflow: hidden;
 }
 
 /* ===== 落ち葉のスタイル ===== */
-
-/* 落ち葉の共通スタイル */
 .leaf {
   background-size: contain;
   background-repeat: no-repeat;
@@ -16,22 +14,18 @@
   animation: animate-leaf 18s linear;
 }
 
-/* 落ち葉1 */
 .leaf-1 {
-  background-image: url('/images/leaf-1.svg'); /* 任意のパスを記入 */
+  background-image: url('/images/leaf-1.svg')
 }
 
-/* 落ち葉2 */
 .leaf-2 {
-  background-image: url('/images/leaf-2.svg'); /* 任意のパスを記入 */
+  background-image: url('/images/leaf-2.svg');
 }
 
-/* 落ち葉3 */
 .leaf-3 {
-  background-image: url('/images/leaf-3.svg'); /* 任意のパスを記入 */
+  background-image: url('/images/leaf-3.svg');
 }
 
-/* ===== 落ち葉が降るアニメーション ===== */
 @keyframes animate-leaf {
   0% {
     opacity: 0;
